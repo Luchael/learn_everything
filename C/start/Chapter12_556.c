@@ -130,18 +130,126 @@ int main(){
 
     printf("\n\n---11번 문제---\n");
     printf("문자열을 입력하시오: ");
-    char txt[80] = { 0 }, txt2[80][80] = { 0 };
+    char txt[80] = { 0 };
+    int txt2[80] = { 0 };
     char seps2[] = " ";
+    count = 0;
     scanf("%[^\n]s", txt);
-    *(txt2[0]) = strtok(txt, seps2);
-    for(count=1;*(txt2[count])=strtok(NULL, seps2), txt2[count][0]!=NULL;count++);
-    if(txt2[0][0]==NULL) printf("\n");
-    for(int i=count-1;i<=0;i--){
+    txt2[0] = strtok(txt, seps2);
+    for (count = 0; *(txt2+count) != NULL;) {
+        *(txt2 + ++count) = strtok(NULL, seps2);
+    }
+    if (txt2[0] == NULL) printf("\n");
+    for (int i = count - 1; i >= 0; i--) {
         printf("%s", txt2[i]);
-        if(i==0) printf("\n");
+        if (i == 0) printf("\n");
         else printf(" ");
     }
     getchar();
+
+    printf("\n\n---12번 문제---\n");
+    printf("성과 이름을 대문자로 입력하시오 (예: HONG GILDONG): ");
+    char full_name[80] = {0};
+    int nth_name[2] = {0};
+    scanf("%[^\n]s", full_name);
+    for(int i=0;i<strlen(full_name);i++)
+        full_name[i] = tolower(full_name[i]);
+    
+    nth_name[1] = strtok(full_name, seps2);
+    nth_name[0] = strtok(NULL, seps2);
+    strtok(NULL, seps2);
+    printf("%s, %s", nth_name[0], nth_name[1]);
+
+    getchar();
+    
+    printf("\n\n---13번 문제---\n");
+    printf("문자열을 입력하시오: ");
+    char seps3[]=".,", count_dots[80]={0};
+    scanf("%[^\n]s", count_dots);
+    count = 0;
+    strtok(count_dots, seps3);
+    for(;strtok(NULL, seps3)!=NULL;count++);
+    printf("구두점의 개수는 %d입니다.\n", count);
+    getchar();
+
+    printf("\n\n---14번 문제---\n");
+    char original[80], find[80], change[80];
+    printf("문자열을 입력하시오: ");
+    scanf("%[^\n]s", original);
+    getchar();
+    printf("찾을 문자열: ");
+    scanf("%[^\n]s", find);
+    getchar();
+    printf("바꿀 문자열: ");
+    scanf("%[^\n]s", change);
+    length = strlen(original), tf=0;
+    int length2 = strlen(find);
+    for(count=0;count<length;count++){
+        if(tf==length2){
+            break;
+        }
+        if(*(find+tf)==*(original+count))
+            tf++;
+        else tf=0;
+    }
+    if(tf<length2) printf("%s\n", original);
+    else{
+        count -= length2;
+        for(int i=0;i<tf;i++){
+            if(*(change+i)==0) *(change+i)=*(original+(count+i));
+            *(original+(count+i))=*(change+i);
+        }
+        printf("%s\n", original);
+    }
+
+    getchar();
+
+    printf("\n\n---15번 문제---\n");
+    printf("연산을 입력하시오 (ex: add 3 5)\n(더하기: add, 배기: sub, 곱하기: mul, 나누기: div)\n");
+    char operator[4]={ 0 }, operator_list[4][4] = { "add", "sub", "mul", "div" };
+    int num[2]={0};
+    scanf("%c%c%c %d %d", &operator[0], &operator[1], &operator[2], &num[0], &num[1]);
+    printf("연산의 결과: ");
+    for (int i = 0; i < 4; i++) {
+        if (strcmp(operator, operator_list[i], 1) == 0) {
+            switch (i) {
+            case 0: printf("%d", num[0] + num[1]);
+                break;
+            case 1: printf("%d", num[0] - num[1]);
+                break;
+            case 2: printf("%d", num[0] * num[1]);
+                break;
+            case 3: printf("%lf", 1.0 * num[0] / num[1]);
+                break;
+            }
+        }
+    }
+
+    printf("\n\n---16번 문제---\n");
+    char advertise_ment[80] = { 0 };
+    int length=0, count=0;
+    printf("광고하고 싶은 텍스트를 입력하시오: ");
+    scanf("%[^\n]s", advertise_ment);
+    length = strlen(advertise_ment);
+    for (int i = 0; i < length + 5; i++) {
+        printf("=");
+    }
+    printf("\n");
+    getchar();
+    --length;
+    while (1) {
+        if(count<=length)
+            printf("%s   ", (advertise_ment + count));
+        else 
+            for (int i = 0; i <= (length + 3)-count; i++) printf(" ");
+
+        for (int i = 0; i < count; i++)
+            printf("%c", *(advertise_ment + i));
+        getchar();
+        count++;
+        if (count > length+3) count = 0;
+    }
+
 }
 
 void str_upper(char *s){
