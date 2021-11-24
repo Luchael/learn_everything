@@ -211,7 +211,7 @@ int main(){
     scanf("%c%c%c %d %d", &operator[0], &operator[1], &operator[2], &num[0], &num[1]);
     printf("연산의 결과: ");
     for (int i = 0; i < 4; i++) {
-        if (strcmp(operator, operator_list[i], 1) == 0) {
+        if (strcmp(operator, operator_list[i]) == 0) {
             switch (i) {
             case 0: printf("%d", num[0] + num[1]);
                 break;
@@ -227,7 +227,7 @@ int main(){
 
     printf("\n\n---16번 문제---\n");
     char advertise_ment[80] = { 0 };
-    int length=0, count=0;
+    count=0;
     printf("광고하고 싶은 텍스트를 입력하시오: ");
     scanf("%[^\n]s", advertise_ment);
     length = strlen(advertise_ment);
