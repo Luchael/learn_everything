@@ -159,7 +159,6 @@ int main(){
     nth_name[0] = strtok(NULL, seps2);
     strtok(NULL, seps2);
     printf("%s, %s", nth_name[0], nth_name[1]);
-
     getchar();
     
     printf("\n\n---13번 문제---\n");
