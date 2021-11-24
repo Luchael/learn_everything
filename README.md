@@ -1,10 +1,12 @@
 # Let's learn_everything!
 
 * programming language
+    * git?
+    * HTML?? && javascript
     * C
     * JAVA
     * C#
-    * python(ipynb)
+    * python3 (ipynb)
     * C++
     * masm
 * natural language
