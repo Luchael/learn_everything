@@ -20,10 +20,19 @@ typedef struct EMPLOYEE{
     int age;
 }employee;
 
+typedef struct INFO{
+    char name[20];
+    char home_call[9];
+    char phone_call[9];
+}info;
+
+struct card{int value, char suit;};
+
 struct complex complex_add(struct complex c1, struct complex c2);
 int equal(point *p1, point *p2);
 int quadrant(point p);
 double area(CIRCLE c), perimeter(CIRCLE c);
+int cal_sum(struct food *a);
 
 int main(){
     srand((unsigned)time(NULL));
@@ -89,13 +98,17 @@ int main(){
     printf("원의 면적 = %lf, 원의 둘레 = %lf", area(won), perimeter(won));
 
     printf("\n\n---9번 문제---\n");
-    struct food food_array[3];
+    struct food food_array[3] = {
+        {"hambuger", 900}, {"pizza", 1000}, {"ramyeon", 500}
+    };
+    printf("총 칼로리=%d", cal_sum(food_array));
 
     printf("\n\n---10번 문제---\n");
     employee member[10];
     for(int i=0;i<10;i++){
-        char a[10] = {"홍길동"};
-        a[strlen(a)]=(char)i;
+        char a[20] = {"홍길동..."};
+        a[9]=(char)('0'+i);
+        a[10]='\0';
         strcpy(member[i].name, a);
         member[i].age = rand()%30+15;
     }
@@ -103,6 +116,27 @@ int main(){
         if(member[i].age>20&&member[i].age<30)
             printf("이름=%s 나이=%d\n", member[i].name, member[i].age);
     }
+
+    printf("\n\n---11번 문제---\n");
+    char a[20] = { 0 };
+    info people[3] = {
+        {"lee", "111-1111", "111-1112"}, {"park", "222-2222", "222-2223"},{"kim", "333-3333", "333-3334"}
+    };
+    for(int i=0;i<3;i++){
+        printf("이름을 입력하시오: %s\n집전화번호를 입력하시오: %s\n휴대폰번호를 입력하시오: %s\n\n", people[i].name, people[i].home_call, people[i].phone_call);
+    }
+    printf("검색할 이름을 입력하시오: ")
+    scanf("%s", a);
+    for(int i=0;i<3;i++){
+        if(strcmp(a, people[i].name)){
+            printf("집전화번호: %s\n휴대폰번호: %s\n", people[i].home_call, people[i].phone_call);
+            break;
+        }
+    }
+
+    printf("\n\n---12번 문제---\n");
+    
+    
 }
 
 struct complex complex_add(struct complex c1, struct complex c2){
@@ -131,3 +165,12 @@ double area(CIRCLE c){
 double perimeter(CIRCLE c){
     return c.radius*2*3.14;
 }
+
+int cal_sum(struct food *a){
+    int sum = 0;
+    for(int i=0;i<3;i++){
+        sum+=(a+i)->calories;
+    }
+    return sum;
+}
+
