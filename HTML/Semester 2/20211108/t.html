@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style='background: #555; color:#ccc;'>
+    <p id="carname"></p>
+    <p id="carcolor"></p>
+    <p id="carspeed"></p>
+    <p id="name"></p>
+    <p id="upspeed"></p>
+    <p id="downspeed"></p>
+    <p id="matrix"></p>
+    <script>
+        document.getElementById("matrix").textContent=''
+        var car={
+            name: 'Sonata',
+            speed: 50,
+            color: 'white',
+            speedup: function(){
+                return this.speed+10;
+            },
+            string_plus: function(aaa,bbb){
+                return aaa+bbb;
+            },
+            speeddown: function(){
+                return this.speed-10;
+            },
+            /*matrix:function(a, b, e, d){
+                c=[];
+                for(i=0;i<a;i++){
+                    c[i]=[];
+                    for(j=0;j<b;j++){
+                        c[i][j]=0;
+                        if(i==e||j==d||(a==b&&(i==j||i==b-1-j)))
+                            c[i][j]=1;
+                        document.write(" "+{c[i][j]});
+                    }
+                    document.write('<br>')
+                }
+            },*/
+            matrix: function(a,b,c,d){
+                e=[];
+                //0으로
+                for(i=0;i<a;i++){
+                    e[i]=[];
+                    for(j=0;j<b;j++)
+                        e[i][j]=0;
+                }
+                //1로
+                for(i=0;i<a;i++)
+                    for(j=0;j<b;j++)
+                        if(i==c||j==d||(a==b&&(i==j||i==b-1-j)))
+                            e[i][j]=1;
+                //출력
+                for(i=0;i<a;i++){
+                    for(j=0;j<b;j++)
+                        document.write(' '+e[i][j]);
+                    document.write('<br>')
+                }
+            }
+        };
+        var cname=document.getElementById("carname");
+        cname.textContent = car.name;
+
+        var colname = document.getElementById("carcolor");
+        colname.textContent = car.color;
+
+        var cspeed = document.getElementById("carspeed");
+        cspeed.textContent = car.speed;
+
+        document.getElementById("name").textContent = car.string_plus("aaa", "bbb");
+
+        document.getElementById("upspeed").textContent='속도 증가 : ' + car.speedup();
+        document.getElementById("downspeed").textContent = `속도 감소 : ${car.speeddown()}`
+        car.matrix(11,11,5,5)
+    </script>
+</body>
+</html>

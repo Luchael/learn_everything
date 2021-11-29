@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printValue(num, value){
+            document.write(`${num+1}번 학생 점수 = ${value!==undefined?value:"없음"}<p/>`)
+        }
+        var com=[95, 88, , 72, 68, , 99, 82, 78, 87];
+        var getAvg;
+        function printArr(){
+            var i=0;
+            var sum=0;
+            var count=0;
+            var n=com.length;
+            document.write(n + "명의 점수 입력<p/>");
+            
+            do{
+                if(com[i]!==undefined){
+                    sum+=com[i];
+                    count++
+                }
+                printValue(i, com[i]);
+            }while(++i<n);
+
+            document.write("점수를 입력한 학생 : " + count + "명<p/>");
+            document.write("총합: " + sum + "<p/>");
+            return (sum/count);
+        }
+        getAvg = printArr();
+        document.write("평균 : " + getAvg + "<p/>");
+    </script>
+</body>
+</html>

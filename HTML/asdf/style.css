@@ -1,0 +1,990 @@
+@import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+*{
+	box-sizing: border-box;
+}
+body{
+	background-color: white;
+	color: #1E1E1E;
+	justify-content: center;
+	font-family: '배달의민족 주아';
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	transition: background 0.2s linear;
+	cursor: none;
+}
+body.cursor_active{
+	cursor: default;
+}
+
+body.dark{
+	background-color: #1E1E1E;
+	color: #D4D4D4;
+}
+
+.asdfasdf_main table, .asdfasdf_main th, .asdfasdf_main td{
+	font-family:'Times New Roman2';
+	border: 2px solid gray;
+	width: 0%;
+}
+
+#표1{
+	border-collapse: separate;
+	border-spacing: 10px;
+}
+
+#표2{
+	border-collapse: collapse;
+}
+
+ul>li{
+	padding-top: 10px;
+}
+
+ol *{
+	padding: 0px;
+}
+
+section{
+	height: relative;
+	cursor: none;
+}
+section.cursor_active{
+	cursor: default;
+}
+
+a{
+	text-decoration: none;
+	cursor: none;
+}
+a.cursor_active{
+	cursor: default;
+}
+
+.a{color: #1E1E1E;
+	transition: color 0.2s linear;}
+
+.a.dark{
+	color: #D4D4D4;
+}
+
+.navbar{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: lightblue;
+	padding: 8px 12px;
+	transition: background 0.2s linear;
+	cursor: none;
+}
+.navbar.cursor_active{
+	cursor: default;
+}
+
+.navbar.dark{
+	background-color: #1E1E1E
+}
+
+.navbar_logo{
+	font-size: 24px;
+}
+
+.navbar_menu{
+	display: flex;
+	list-style: none;
+	padding-left: 0;
+	font-size: 20px;
+}
+
+.navbar_menu li{
+	padding: 8px 12px;
+}
+
+.시간표{
+	color:#1E1E1E;
+	transition: color 0.2s linear;
+}
+
+.시간표.dark{
+	color:#D4D4D4
+}
+
+.과제{
+	color:#1E1E1E;
+	transition: color 0.2s linear;
+}
+
+.과제.dark{
+	color:#D4D4D4
+}
+
+.필요한것{
+	color:#1E1E1E;
+	transition: color 0.2s linear;
+}
+
+.필요한것.dark{
+	color: #d4d4d4;
+}
+
+.진도{
+	color:#1E1E1E;
+	transition: color 0.2s linear;
+}
+
+.진도.dark{
+	color: #d4d4d4;
+}
+
+.노래{
+	color:#1E1E1E;
+	transition: color 0.2s linear;
+}
+
+.노래.dark{
+	color: #d4d4d4;
+}
+
+.뱀{
+	color:#1E1E1E;
+	transition: color 0.2s linear;
+}
+
+.뱀.dark{
+	color: #d4d4d4;
+}
+
+.벽돌{
+	color:#1E1E1E;
+	transition: color 0.2s linear;
+}
+
+.벽돌.dark{
+	color: #d4d4d4;
+}
+
+.지뢰{
+	color: #1E1E1E;
+	transition: color 0.2s linear;
+}
+
+.지뢰.dark{
+	color: #d4d4d4
+}
+
+.navbar_menu li:hover{
+	background-color: green;
+	border-radius: 4px;
+}
+
+.navbar_icons{
+	list-style: none;
+	display: flex;
+	padding-left: 0;
+}
+
+.navbar_icons li{
+	padding: 8px 12px;
+}
+
+.navbar_toogleBtn{
+	display: none;
+	position: absolute;
+	right: 32px;
+	font-size: 24px;
+}
+
+.checkbox{
+	opacity: 0;
+	position: absolute;
+}
+
+.checkbox:checked + .label .ball{
+	transform: translateX(30px);
+}
+
+.label{
+	background-color: rgb(198, 240, 253);
+	display: flex;
+	align-items:center;
+	justify-content: space-between;
+	border-radius: 50px;
+	position: relative;
+	border-radius: 50px;
+	height: 26px;
+	width: 50px;
+	transition: background 0.2s linear;
+	cursor: none;
+}
+.label.cursor_active{
+	cursor: default;
+}
+.label.dark{
+	background-color: #101010;
+}
+
+.ball{
+	background-color: #FFF;
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 0px;
+	height: 22px;
+	width: 22px;
+	transition: all 0.2s linear;
+	transition-property: transform, background;
+}
+
+.ball.dark{
+	background-color: lightskyblue;
+}
+
+.fa-moon{
+	color: #f1c40f;
+}
+
+.fa-sun{
+	color: #f39c12;
+}
+
+.fa-cat{
+	color: #1E1E1E;
+	transition: color 0.2s linear;
+}
+.fa-cat.dark{
+	color: #D4D4D4
+}
+
+.fa-twitter-square{
+	font-size: 30px;
+	color: black;
+	transition: color 0.2s linear;
+}
+.fa-twitter-square.dark{
+	color: #D4D4D4;
+}
+
+.fa-facebook-square{
+	font-size: 30px;
+	color: black;
+	transition: color 0.2s linear;
+}
+
+.fa-facebook-square.dark{
+	color: #d4d4d4
+}
+
+.fa-instagram-square{
+	font-size: 30px;
+	color: black;
+	transition: color 0.2s linear;
+}
+
+.fa-instagram-square.dark{
+	color: #d4d4d4
+}
+
+.fa-github-square{
+	font-size: 30px;
+	color: black;
+	transition: color 0.2s linear;
+}
+
+.fa-github-square.dark{
+	color: #d4d4d4;
+}
+
+/*.container{
+	height: 100vh;
+	/*background-image: url(~~~);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	===
+	background: url(~~~) no-repeat center center;
+	background-size: cover;* /
+}
+
+/*항상 임시 border를 넣어줌* /
+.container:before/*오버레이* /{
+	content: '';
+	position: absolute;
+	/*가상클래스 무조건 content 로 시작
+	position: absolute; 까지 세트* /
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+}*/
+
+form.box{
+	width: 500px;
+	/*중앙 공식(?)*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/*---*/
+	color: #fff;
+	text-align:center;
+}
+
+form.box h1{
+	font-weight: normal;
+}
+
+form.box input{
+	/*음각 없애기
+	공통된것의 중복 사용은 최소화*/
+	border: none;
+}
+
+form.box input[type=text] {
+	background-color: #fff;
+	width: 340px;
+	padding: 10px;
+	/*border-top-left-radius: 25px; 1	
+	border-bottom-left-radius: 25px; 4
+	===*/
+	border-radius: 25px 0 0 25px;
+}
+
+form.box input[type=submit]{
+	width: 130px;
+	background-color: orange;
+	padding: 10px;
+	border-radius: 0 25px 25px 0;
+	color: #fff;
+	margin-left: -6px;
+}
+
+/*사용빈도 낮음 / placeholder를 디자인하는 용도
+column(:) 1개 = 예전 css 에서부터 있던 가상클래스
+column(:) 2개 = css3 에서 새로 생긴 가상클래스*/
+form.box input[type=text]::placeholder{
+	color: gray;
+}
+
+.search{
+	width: 30px;
+	height: 30px;
+	background-color: #222;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: 0.5s;
+}
+
+.search.active{
+	width: 100%;
+	height: 100vh;
+	cursor:auto;
+}
+
+.search form{
+	width: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	display: none;
+}
+
+.search.active form{
+	display: block;
+}
+
+.search form input[type=text] {
+	color: #fff;
+	/*백그라운드 투명하게 하기 / none을 쓰면 안 됨*/
+	background-color: transparent;
+	padding: 10px;
+	border: none;
+	border-bottom: 1px solid lightgray;	
+	width: 100%;
+}
+
+.search form input[type=text]::placeholder {
+	color: #fff;
+	font-size: 26px;
+	text-align: center;
+}
+
+.search .icon{
+	border: 1px solid #fff;
+	width: 30px;
+	height: 30px;
+	background-color: #222;
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+}
+
+.search .icon:before{
+	content: '\f002';
+	font-family: fontawesome;
+}
+
+.search.active .icon:before{
+	content: '\f00d';
+	font-family: fontawesome;
+}
+
+.login-_{
+	width: 30px;
+	height: 30px;
+	background-color: #222;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: 0.5s;
+}
+
+.login-_ .icon{
+	border: 1px solid #fff;
+	width: 30px;
+	height: 30px;
+	background-color: #222;
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+}
+
+.login-_ .icon:before{
+	content: '\f2f6';
+	font-family: fontawesome;
+}
+
+.schedule_main{
+	display:none;
+	float: center;
+	width: 100%;
+	padding: 10px;
+}
+.schedule_main.active{
+	display: flex;
+}
+
+.asdfasdf_main{
+	display: none;
+	cursor: default;
+	align-items: center;
+	height: auto;
+	float: center;
+	flex-direction: column;
+	margin: 20px;
+	font-family: none;
+	font-size: auto;
+}
+.asdfasdf_main.active{
+	display: flex;
+}
+.cursor.cursor_active{
+	transition: all 10000ms ease-in;
+	-webkit-transition: all 10000ms ease-in;
+}
+.cursor2.cursor_active{
+	transition: all 10000ms ease-in;
+	-webkit-transition: all 10000ms ease-in;
+}
+.cursor3.cursor_active{
+	transition: all 10000ms ease-in;
+	-webkit-transition: all 10000ms ease-in;
+}
+.cursor4.cursor_active{
+	transition: all 10000ms ease-in;
+	-webkit-transition: all 10000ms ease-in;
+}
+
+.homework_main{
+	display: none;
+	float: left;
+	padding: 10px;
+}
+.homework_main.active{
+	display: flex;
+}
+.table table, .table td, .table th{
+	border: 3px solid gray;
+	font-weight: 300;
+	font-size: 25px;
+}
+.table{
+	color:#1E1E1E;
+	transition: color 0.2s linear;
+	background-color: transparent;
+}
+.table.dark{
+	color: #D4D4D4;
+}
+#scedule_004{
+	border-collapse: collapse;
+	border-spacing: 10px;
+}
+
+#kyopil{
+	background-color: lightpink;
+	color: #1E1E1E;
+	text-decoration: none;
+}
+#kyosun{
+	background-color: greenyellow;
+	color: #1E1E1E;
+	text-decoration: none;
+}
+#junpil{
+	background-color: cyan;
+	color: #1E1E1E;
+	text-decoration: none;
+}
+#junsun{
+	background-color: mediumaquamarine;
+	color: #1E1E1E;
+	text-decoration: none;
+}
+#memo{
+	font-size: 300px;
+}
+
+.homework{
+	font-size: 32px;
+}
+
+.homework_menu{
+	justify-content: center;
+	flex-direction: column;
+	font-weight: border;
+	font-size: 20px;
+}
+
+.homework_subject_a ol{
+	display: none;
+	justify-content: center;
+	flex-direction: column;
+}
+
+
+.homework_menu.active{
+	display: flex;
+}
+
+.homework_subject_a ol.active{
+	display: flex;
+}
+
+.homework_subject_b ol{
+	display: none;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.homework_subject_b ol.active{
+	display: flex;
+}
+
+.needs{
+	font-size: 32px;
+}
+
+.needs_main{
+	display:none;
+	float: left;
+	padding: 10px;
+}
+
+.needs_menu{
+	justify-content: center;
+	flex-direction: column;
+	font-weight: border;
+	font-size: 20px;
+}
+
+.needs_main.active{
+	display: flex;
+}
+
+
+.needs_subject_a ol{
+	display: none;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.needs_subject_a ol.active{
+	display: flex;
+}
+
+.needs_subject_a ol ._a{
+	color: black;
+	transition: color 0.2s linear;
+}
+
+.needs_subject_a ol ._a.dark{
+	color: #D4D4D4;
+}
+
+.needs_subject_b ol{
+	display: none;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.needs_subject_b ol.active{
+	display: flex;
+}
+
+.needs_subject_b ol ._a{
+	color: black;
+	transition: color 0.2s linear;
+}
+
+.needs_subject_b ol ._a.dark{
+	color: #D4D4D4;
+}
+
+.needs_subject_b ol ._b{
+	color: black;
+	transition: color 0.2s linear;
+}
+
+.needs_subject_b ol ._b.dark{
+	color: #D4D4D4;
+}
+
+.needs_subject_c ol{
+	display: none;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.needs_subject_c ol.active{
+	display: flex;
+}
+
+.needs_subject_c ol ._a{
+	color: black;
+	transition: color 0.2s linear;
+}
+
+.needs_subject_c ol ._a.dark{
+	color: #D4D4D4;
+}
+
+.snake{
+	display: none;
+	margin-left: 10%;
+}
+
+.snake.active{
+	display:unset;
+}
+
+.break_block{
+	display: none;
+	margin-left: 10%;
+}
+
+.break_block.active{
+	display:unset;
+}
+
+.mine_sweeper{
+	display:none;
+	cursor: default;
+}
+
+.mine_sweeper .grid ~ div{
+	text-align: left;
+	margin: 10px;
+}
+
+.mine_sweeper.active{
+	display: unset;
+}
+
+
+
+#gc{
+	border: 4px solid green;
+}
+#bb{
+	background:#eee;
+	border: 4px solid darkturquoise;
+}
+
+.score{
+	margin-top: -5px;
+	margin-left: 10%;
+	color: #D4D4D4;
+	background-color: #141414;
+	width: 200px;
+	border: 10px solid blue;
+}
+
+@media screen and (max-width: 768px){
+	.navbar{
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 8px 24px;
+	}
+
+	.navbar_menu{
+		display: none;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+
+	.navbar_menu li{
+		width: 100%;
+		text-align: center;
+	}
+
+	.navbar_icons{
+		display: none;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.navbar_toogleBtn{
+		display: block;
+	}
+
+	.navbar_menu.active,
+	.navbar_icons.active{
+		display: flex;
+	}
+	table, td, th{
+		font-size: 110%;
+	}
+	.navbar_menu.active,
+	.navbar_icons:active{
+		transform: translateY(24px);
+	}
+}
+
+#loremipsum{
+	font-family:unset;
+}
+#loremipsum h1{
+	color: #82740E;
+	font-size: 4em;
+	border-bottom: 3px solid gray;
+	border-top: 3px solid darkgreen;
+	border-radius: 40%;
+	lighting-color: khaki;
+	width: 200px;
+	margin-left: 30px;
+	animation: loremAnim .5s infinite alternate;
+}
+
+#loremipsum h1::after{
+	animation: loremAnim2 .5s infinite alternate;
+}
+#loremipsum h3{
+	color: #E8D700;
+	text-shadow: 2px 2px 4px blue;
+	text-decoration: line-through blueviolet;
+}
+#loremipsum p{
+	color: #d4d4d4;
+	font-style: italic;
+	font-weight: bold;
+	text-decoration: line-through;
+	background-color: #1e1e1e;
+}
+
+@keyframes loremAnim{
+    from {
+        transform: scale(1)
+    }
+    to{
+        transform: scale(.7);
+    }
+}
+
+@keyframes loremAnim2{
+    from {
+        transform: scale(1)
+    }
+    to{
+        transform: scale(.4);
+    }
+}
+
+#ㅇㅅㅇㄴ li{
+	list-style-type:georgian;
+	color:lawngreen;
+	text-shadow: 2px 2px lightgoldenrodyellow;
+	background-color: darkblue
+
+}
+
+#ㅇ #ㅁㅅㅁㄴ p{
+	background-color: yellow;
+}
+#ㅇ h1{
+	background-color: red;
+	font-size: 40px;
+	color: gold;
+}
+
+#ㅇ h2{
+	background-color: orange;
+	font-size: 30px;
+	color: darkblue;
+}
+
+#ㅇ h3{
+	background-color: pink;
+	font-size: 20px;
+	color: magenta;
+}
+
+.ㄻㄻ{
+	background-color: lightgreen;
+	color: black;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+#ㄻ{
+	background-color: violet;
+	color: black;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#ㄻㄻ{
+	background-color: yellowgreen;
+	color: blue;
+	font-size: 20px;
+	font-weight: lighter;
+}
+
+/*#ㅇ p{
+	background-color: skyblue;
+	font-size: 10px;
+	color:mediumblue;
+}*/
+
+.asdfasdf_main a[target="_blank"] {
+	background-color: yellow;
+	color: green;
+}
+
+.asdfasdf_main [title~=tag]{
+	border: 5px solid blue;
+}
+.dash선택 [class|=tag]{
+	background: yellow
+}
+
+.dash선택 [class|=text]{
+	background: blue;
+	color: #DFDADE
+}
+
+.처음부터 [class^=tag]{
+	background: hotpink;
+}
+
+.마지막 [class$="text"]{
+	background: darksalmon;
+	color: #ddd
+}
+
+.포함 [class*="te"]{
+	background:lavender
+}
+
+.asdfasdf_main .import p{
+	background-color: yellow;
+}
+
+.asdfasdf_main .import2 h1{
+	background-color: lightgreen;
+	color: red;
+	font-size: 15px;
+	font-weight: bolder;
+}
+
+.asdfasdf_main .child1>p{
+	background-color: yellow;
+}
+
+.asdfasdf_main .plus h1 + p{
+	background-color: lightgreen;
+}
+
+.asdfasdf_main .plus div + h1 {
+	background-color: yellow;
+	font-size: 25px;
+	font-weight: lighter;
+	color: blue;
+}
+.asdfasdf_main .flows div ~ p{
+	background-color: yellow;
+}
+
+.asdfasdf_main .flows div ~ section{
+	background-color: lightgreen;
+}
+
+.asdfasdf_main .comma h1, .asdfasdf_main .comma h2, .asdfasdf_main .comma p{
+	text-align: center;
+	color: blue;
+	font-weight: lighter;
+	text-decoration: underline overline;
+	background-color: lightgreen;
+}
+.asdfasdf_main .hovering{
+	cursor: default;
+}
+.asdfasdf_main .hovering:hover{
+	color: red;
+	text-align: right;
+	font-size: 25px;
+	font-style: italic;
+	text-decoration: underline;
+	background-color: lightgreen;
+}
+.asdfasdf_main .hovering:active{
+	color: blue;
+	font-size: 10px;
+	text-align: center;
+	text-decoration: overline;
+	background-color: yellow;
+}
+
+.asdfasdf_main .childs1 li:first-child{
+	background-color: yellow;
+}
+
+.asdfasdf_main .childs2 p:first-child{
+	background-color: yellow;
+}
+
+.asdfasdf_main .childs3 p:last-child{
+	background-color: yellow;
+}
+
+.asdfasdf_main .childs3 .childs4 p:nth-last-child(2){
+	background-color: lightgreen;
+}
+.asdfasdf_main .childs5 p:nth-last-child(2){
+	background: lightgreen;
+	font-weight: bold;
+}
+.asdfasdf_main .childs5 p:nth-child(2){
+	background-color: skyblue;
+	font-weight: bold;
+	color: red;
+}

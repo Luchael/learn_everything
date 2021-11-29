@@ -1,5 +1,5 @@
 # Let's learn_everything!
-## !!
+## 음악 파일은 저작권 땜에 다 빼버림
 ## !!
 
 * programming language
