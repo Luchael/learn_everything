@@ -4,7 +4,7 @@
 #include <time.h>
 
 struct complex{double real, imag; };
-typedef struct POINT{int x, y; }point;
+typedef struct POINT{int x; int y; }point;
 typedef struct circle{
     point center;
     double radius;
@@ -26,7 +26,7 @@ typedef struct INFO{
     char phone_call[9];
 }info;
 
-struct card{int value, char suit;};
+struct card{int value; char suit;};
 
 struct complex complex_add(struct complex c1, struct complex c2);
 int equal(point *p1, point *p2);
@@ -72,8 +72,8 @@ int main(){
     struct complex c1, c2;
     printf("\n\n---4번 문제---\n");
     scanf("%lf %lf %lf %lf", &c1.real, &c1.imag, &c2.real, &c2.imag);
-    struct complex a = complex_add(c1, c2);
-    printf("%g + %gi\n", a.real, a.imag);
+    struct complex aaa = complex_add(c1, c2);
+    printf("%g + %gi\n%g + %gi\n%g + %gi\n", c1.real,c1.imag,c2.real,c2.imag,aaa.real, aaa.imag);
     
     printf("\n\n---5, 6번 문제---\n");
     point p1, p2;
@@ -125,7 +125,7 @@ int main(){
     for(int i=0;i<3;i++){
         printf("이름을 입력하시오: %s\n집전화번호를 입력하시오: %s\n휴대폰번호를 입력하시오: %s\n\n", people[i].name, people[i].home_call, people[i].phone_call);
     }
-    printf("검색할 이름을 입력하시오: ")
+    printf("검색할 이름을 입력하시오: ");
     scanf("%s", a);
     for(int i=0;i<3;i++){
         if(strcmp(a, people[i].name)){
