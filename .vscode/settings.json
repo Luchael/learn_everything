@@ -1,6 +1,7 @@
 {
+    "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
+        "*.pde": "pde",
         "test.C": "cpp"
-        
     }
 }
